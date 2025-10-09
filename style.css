@@ -7,6 +7,12 @@
     padding: 0;
 }
 
+html,
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 body {
     font-family: "Libre Baskerville", serif;
     color: rgb(34, 34, 34);
