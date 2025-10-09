@@ -1,0 +1,395 @@
+/* General */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Libre Baskerville", serif;
+    color: rgb(34, 34, 34);
+    padding-top: 17vh;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+p {
+    color: rgb(85, 85, 85);
+}
+
+/* DESKTOP NAV */
+
+nav,
+.nav-links {
+    display: flex;
+}
+
+nav {
+    justify-content: space-around;
+    align-items: center;
+    height: 8vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 9999;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.nav-links {
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+li a {
+    color: black;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: green;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+}
+
+.logo a:hover {
+    cursor: pointer;
+}
+
+/* HAMBURGER MENU */
+
+#hamburger-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 8vh;
+    width: 100%;
+    background-color: white;
+    z-index: 9999;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.hamburger-menu {
+    position: relative;
+}
+
+/* Hamburger button + icon bars */
+.hamburger-icon {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 22px;
+    width: 30px;
+    padding: 6px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    align-items: center;
+}
+
+.hamburger-icon:focus {
+    outline: 2px solid rgba(0, 120, 215, 0.18);
+    outline-offset: 4px;
+}
+
+.hamburger-icon span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #111;
+    border-radius: 2px;
+    transition: transform 0.35s ease, opacity 0.2s ease, background-color 0.18s ease;
+    transform-origin: center;
+}
+
+.menu-links {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    background-color: #fff;
+    width: 200px;
+    max-height: 0;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    transition: max-height 0.35s cubic-bezier(.2, .9, .2, 1), opacity 0.25s ease;
+    opacity: 0;
+    transform-origin: top right;
+    z-index: 9999;
+}
+
+.menu-links a {
+    display: block;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 1rem;
+    color: #111;
+    text-decoration: none;
+    transition: background-color 0.18s ease, color 0.18s ease;
+    border-radius: 6px;
+}
+
+.menu-links a:hover,
+.menu-links a:focus {
+    background-color: rgba(0, 128, 0, 0.06);
+    color: #0a6f0a;
+}
+
+.menu-links li {
+    list-style: none;
+}
+
+.menu-links.open {
+    max-height: 600px;
+    /* allow expansion for more items */
+    opacity: 1;
+}
+
+.hamburger-icon.open span:first-child {
+    transform: translateY(5px) rotate(45deg);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.hamburger-icon.open span:last-child {
+    transform: translateY(-3.5px) rotate(-45deg);
+}
+
+/* ensure spans default */
+.hamburger-icon span:first-child,
+.hamburger-icon span:nth-child(2),
+.hamburger-icon span:last-child {
+    transform: none;
+    opacity: 1;
+}
+
+/* menu list styling */
+.menu-list {
+    list-style: none;
+    padding: 8px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* SECTIONS */
+
+section {
+    padding-top: 4vh;
+    margin: 0 10rem;
+    box-sizing: border-box;
+    min-height: fit-content;
+}
+
+.section-container {
+    display: flex;
+}
+
+
+/* PROFILE SECTION */
+
+#profile {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    padding: 4rem 0;
+    flex-wrap: wrap;
+}
+
+.profile-container {
+    display: flex;
+    height: 500px;
+    width: 500px;
+    margin: auto 0;
+}
+
+.section-text {
+    align-self: center;
+    text-align: justify;
+}
+
+.section-text p {
+    font-weight: 200;
+}
+
+.section-text-p1 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-text-p2 {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 2rem;
+}
+
+.title {
+    font-size: 3rem;
+    color: #0a6f0a;
+    margin-bottom: 1.5rem;
+}
+
+#socials-container {
+    display: flex;
+    justify-content: left;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+/* ICONS */
+
+.icon {
+    cursor: pointer;
+    height: 1.5rem;
+}
+
+/* ABOUT */
+
+#about {
+    position: relative;
+}
+
+#about .section-text-p1 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+#about .title {
+    font-size: 3rem;
+    color: green;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+#about .section-text-p2 {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    text-align: justify;
+}
+
+.details-container {
+    border: lightgray 0.1rem solid;
+    padding: 1rem;
+    border-radius: 1rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.details-icon {
+    font-size: 2rem;
+}
+
+.details-title {
+    font-size: 1.5rem;
+}
+
+.content-location,
+.subcontent {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.content-1-container,
+.content-2-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.content-container {
+    margin-top: 1rem;
+}
+
+.content-title {
+    font-size: 1.2rem;
+}
+
+.content-type {
+    background-color: #cbf5dd;
+    padding: 0rem 0.6rem;
+    color: green;
+    border-radius: 1rem;
+    text-align: center;
+    font-size: 0.7rem;
+}
+
+.content-details {
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+/* PROJECTS */
+
+#projects {
+    position: relative;
+}
+
+#projects .section-text-p1 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+#projects .title {
+    font-size: 3rem;
+    color: green;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+#projects .section-text-p2 {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    text-align: justify;
+}
+
+.project-image {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 0.3rem;
+}
+
+.project-title {
+    font-size: 2rem;
+}
+
+.project-description {
+    font-size: 1rem;
+    text-align: justify;
+}
+
+/* CONTACT */
+
+.contact-icon {
+    height: 2.5rem;
+
+}
+
+#contact a {
+    text-decoration: none;
+    color: black;
+    transform: all 300ms ease;
+}
+
+#contact a:hover {
+    color: green;
+    text-decoration: green 0.1rem underline;
+}
